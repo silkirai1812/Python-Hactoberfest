@@ -1,0 +1,4 @@
+ //to calculate the sum of nth row of pascal's triangle
+ def sum_of_nth_row_pascal(n):
+    ans1 = 1 << (n - 1)
+    print("Sum of the nth row of Pascal's triangle =", ans1)
