@@ -1,0 +1,29 @@
+//printing paths in the maze if we can go right and down in the maze
+def printingPaths1(p, row, col):
+    if row == 1 and col == 1:
+        return [p]
+
+    ans = []
+
+    if row > 1:
+        down = printingPaths1(p + "D", row - 1, col)
+        ans.extend(down)
+
+    if col > 1:
+        right = printingPaths1(p + "R", row, col - 1)
+        ans.extend(right)
+
+    return ans
+
+
+
+ //counting the number of paths in a maze(2-d array) if we can go only right and down
+def countPaths(row, col):
+    if row == 1 or col == 1:
+        return 1
+
+    count = 0
+    count += countPaths(row - 1, col)
+    count += countPaths(row, col - 1)
+    return count
+
